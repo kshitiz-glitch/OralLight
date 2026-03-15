@@ -1,0 +1,48 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+*.local
+tsconfig.tsbuildinfo
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+Thumbs.db
+
+# Datasets & ML artifacts
+/data/
+/ml/notebooks/.ipynb_checkpoints
+
+# ONNX/binary models in web (too large for git)
+/web/public/models/*.onnx
+/web/public/models/*.bin
+/web/public/models/*.json
+
+# Documentation — exclude all .md except README
+*.md
+!README.md
+
+# PDFs
+*.pdf
+
+# Backup files
+*.backup

@@ -1,0 +1,54 @@
+/* OralLight - Base Styles */
+/* This file sets up the foundation for the design system */
+
+:root {
+  /* Use Inter font family from Google Fonts */
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+
+  /* Pure white text color (not transparent) */
+  color: #ffffff;
+  
+  /* Navy gradient background for medical-grade aesthetics */
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  
+  /* Always use dark color scheme */
+  color-scheme: dark;
+
+  /* Font rendering optimizations */
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Links styled with teal accent */
+a {
+  font-weight: 500;
+  color: #06b6d4;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #22d3ee;
+}
+
+/* Body setup */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  background-attachment: fixed;
+}
+
+/* Remove default heading styles - let design-system.css handle it */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+}
+
+/* Remove default button styles - let design-system.css handle it */
+button {
+  font-family: inherit;
+}

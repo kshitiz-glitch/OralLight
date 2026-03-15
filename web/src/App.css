@@ -1,0 +1,9 @@
+/* OralLight - App Component Styles */
+/* Minimal app-level styles - most styling comes from design-system.css */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
