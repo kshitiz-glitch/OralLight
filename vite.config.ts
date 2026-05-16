@@ -25,6 +25,9 @@ export default defineConfig({
       strategies: 'injectManifest',
       srcDir: 'src',
       filename: 'sw.ts',
+      injectManifest: {
+        maximumFileSizeToCacheInBytes: 25 * 1024 * 1024, // 25 MB — needed for ONNX WASM runtime
+      },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,webmanifest}']
       },
