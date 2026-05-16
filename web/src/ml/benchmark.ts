@@ -14,7 +14,7 @@
  */
 
 import * as ort from 'onnxruntime-web'
-import { inferWithUncertainty } from './inference'
+import { inferWithUncertainty } from './infer'
 
 export interface BenchmarkResult {
     backend: 'webgpu' | 'webgl' | 'wasm'
@@ -87,7 +87,7 @@ export async function benchmarkBackend(
 
     try {
         // Check if backend is supported
-        const availableBackends = ort.env.wasm.numThreads > 0
+        const availableBackends = (ort.env.wasm.numThreads ?? 0) > 0
             ? ['webgpu', 'webgl', 'wasm']
             : ['webgl', 'wasm']
 
