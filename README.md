@@ -10,7 +10,7 @@
 [![ONNX Runtime](https://img.shields.io/badge/ONNX_Runtime-Web-FF6F00?logo=onnx&logoColor=white)](https://onnxruntime.ai)
 [![PWA](https://img.shields.io/badge/PWA-Offline_First-5A0FC8?logo=pwa&logoColor=white)](https://web.dev/progressive-web-apps/)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)](https://python.org)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 
 </div>
 
@@ -28,7 +28,7 @@
 - [ML Pipeline](#-ml-pipeline)
 - [Deployment](#-deployment)
 - [Contributing](#-contributing)
-- [License](#-license)
+
 - [Disclaimer](#%EF%B8%8F-disclaimer)
 
 ---
