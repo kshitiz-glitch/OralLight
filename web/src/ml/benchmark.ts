@@ -102,21 +102,20 @@ export async function benchmarkBackend(
             ort.env.webgpu.powerPreference = 'high-performance'
         }
 
-        // Create or use test image
-        let blob: Blob
+        // Create test canvas
+        const testCanvas = document.createElement('canvas')
+        testCanvas.width = 640
+        testCanvas.height = 480
+        const ctx = testCanvas.getContext('2d')!
+
         if (testImage) {
-            blob = testImage
+            // Draw blob onto canvas
+            const img = await createImageBitmap(testImage)
+            ctx.drawImage(img, 0, 0, 640, 480)
         } else {
             // Create a test image (black square)
-            const canvas = document.createElement('canvas')
-            canvas.width = 640
-            canvas.height = 480
-            const ctx = canvas.getContext('2d')!
             ctx.fillStyle = 'black'
             ctx.fillRect(0, 0, 640, 480)
-            blob = await new Promise<Blob>((resolve) => {
-                canvas.toBlob((b) => resolve(b!), 'image/jpeg', 0.95)
-            })
         }
 
         result.supported = true
@@ -125,7 +124,7 @@ export async function benchmarkBackend(
         // Warm-up run (not counted)
         console.log(`[Benchmark] Warm-up run for ${backend}...`)
         try {
-            await inferWithUncertainty(blob, 5) // 5 MC-Dropout passes
+            await inferWithUncertainty(testCanvas, 5) // 5 MC-Dropout passes
         } catch (error) {
             result.errors.push(`Warm-up failed: ${error}`)
             result.supported = false
@@ -140,7 +139,7 @@ export async function benchmarkBackend(
             const start = performance.now()
 
             try {
-                await inferWithUncertainty(blob, 5)
+                await inferWithUncertainty(testCanvas, 5)
                 const end = performance.now()
                 const latency = end - start
 
