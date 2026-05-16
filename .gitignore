@@ -32,10 +32,8 @@ Thumbs.db
 /data/
 /ml/notebooks/.ipynb_checkpoints
 
-# ONNX/binary models in web (too large for git)
-/web/public/models/*.onnx
-/web/public/models/*.bin
-/web/public/models/*.json
+# Large binary models (only ignore if using LFS)
+# /web/public/models/*.bin
 
 # Documentation — exclude all .md except README
 *.md
